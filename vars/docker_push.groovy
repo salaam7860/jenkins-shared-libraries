@@ -5,7 +5,7 @@ def call(String projectName, String imageTag) {
       sh "docker image tag notes-app:latest ${dockerHubUser}/${projectName}:${imageTag}"
       sh "docker push ${dockerHubUser}/${projectName}:${imageTag}"
     } catch (Exception e) {
-      echo "ERROR: Docker operation failed - ${e.getMessage()}"
+      echo 'ERROR: Docker operation failed - ${e.getMessage()}'
     } finally {
       sh "docker logout"
     }
