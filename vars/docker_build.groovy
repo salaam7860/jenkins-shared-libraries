@@ -1,5 +1,5 @@
-def call(String ProjectName, String ImageTag, String DockerHubUser) {
-  def imageName = "${DockerHubUser}/${ProjectName}:${ImageTag}"
+def call(String ProjectName, String ImageTag) {
+  def imageName = "${ProjectName}:${ImageTag}"
 
   def exitStatus = sh(script: "docker build -t ${imageName} .", returnStatus: true)
 
