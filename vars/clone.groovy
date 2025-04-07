@@ -15,7 +15,7 @@ def call(String url, String branch) {
     git url: url, branch: branch, credentialsId: 'your-credentials-id'
     echo "The code has been successfully cloned"
   } catch (Exception e) {
-    sh "echo ERROR: Failed to clone repository - $(e.getMessage()}"
+    sh 'echo ERROR: Failed to clone repository - ${e.getMessage()}'
   }
       
 }
